@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>A architecture model example</h1>
+    <p>This example is stolen from the <a href="https://c4model.com/">C4 Model</a>.</p>
+    <div id="IBS" class="arc-node">
+      <h2 class="name">Internet Banking System</h2>
+      <p>[<span class="type">Software System</span>]</p>
+      <p class="description">Allows customers to view information
+      about their bank accounts, and make payments.</p>
+      <div class="arc-relation">
+        <p class="description">Gets account information from, and makes payments using
+        <a class="target" href="#MBS">MBS</a>.</p>
+      </div>
+      <div class="arc-relation">
+        <p class="description">Sends e-mail using
+        <a class="target" href="#ES">ES</a>.</p>
+      </div>
+    </div>
+    <div id="PBC" class="arc-node person">
+      <h2 class="name">Personal Banking Customer</h2>
+      <p>[<span class="type">Person</span>]</p>
+      <p class="description">Allows customers to view information
+      about their bank accounts, and make payments.</p>
+      <div class="arc-relation">
+        <p class="description">Views account balances, and makes payments using
+        <a class="target" href="#IBS">IBS</a>.</p>
+      </div>
+    </div>
+    <div id="MBS" class="arc-node external">
+      <h2 class="name">Mainframe Banking System</h2>
+      <p>[<span class="type">Software System</span>]</p>
+      <p class="description">Stores all the core banking information
+      about customers, accounts, transactions, etc.</p>
+    </div>
+    <div id="ES" class="arc-node external">
+      <h2 class="name">E-Mail System</h2>
+      <p>[<span class="type">Software System</span>]</p>
+      <p class="description">The internal Microsoft Exchange
+      e-mail system.</p>
+      <div class="arc-relation">
+        <p class="description">Sends e-mail to
+        <a class="target" href="#PBC">PBC</a>.</p>
+      </div>
+    </div>
+  </body>
+</html>
